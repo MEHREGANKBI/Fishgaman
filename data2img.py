@@ -16,7 +16,7 @@ def text2img(stringList):
     
 #given a numpy array of an img, patch it on a the top right corner of another image, and set that another image as Desktop background
 def img2bg(imgArray):
-    image = np.array(Image.open('ubuntu-rgb-sm.png'))
+    image = np.array(Image.open('/home/mehregankbi/fishgaman/ubuntu-rgb-sm.png'))
     image[50:200, 1040:1340, :] = imgArray[:,:,:]
     image = Image.fromarray(image)
     image.save('/home/mehregankbi/fishgaman/ubuntu-patched-finale.png')
