@@ -11,7 +11,8 @@ import os
 
 from time import sleep
 from selenium import webdriver
-#from usps import usps_dict
+from usps import conf_dict
+
 def get_volume():
     #some of the options below just exist so as to lower the likelihood of chromedriver throwing a render error. 
     chrome_options = Options()
@@ -22,7 +23,7 @@ def get_volume():
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--dns-prefetch-disable")
 
-    fish = webdriver.Chrome('/home/mehregankbi/chromedriver', options = chrome_options)
+    fish = webdriver.Chrome(conf_dict['chromedriver_path'], options = chrome_options)
     fish.get('https://user.pishgaman.net/Login.aspx')
     # usin = fish.find_element_by_xpath('//input[@id="tbUsername"]')
     usin = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
@@ -31,8 +32,8 @@ def get_volume():
     psin = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
                         (By.CSS_SELECTOR, 'input#tbPassword')))
     bttn = fish.find_element_by_xpath('//*[@id="bSubmit"]')
-    usin.send_keys(user_dict['username'])
-    psin.send_keys(user_dict['userpass'])
+    usin.send_keys(conf_dict['username'])
+    psin.send_keys(conf_dict['userpass'])
     print('==== started clicking')
     bttn.click()
     print('==== done logging in ')
@@ -48,7 +49,7 @@ def get_volume():
     print(re.findall(r'[\d,]+',vol_norm)[0])
     print(re.findall(r'[\d\/\: ]',days_left)[1])
 
-    with open('/home/mehregankbi/fishgaman/netlog.log', 'a') as f :
+    with open(conf_dict['logfile_path'], 'a') as f :
         f.write(' '.join(['\n', 'Date:', datetime.utcnow().__str__(), '\n', 'Afzoodeh left:', re.findall(r'[\d,]+', vol_afz)[0], '\n',
          'Normal left:', re.findall(r'[\d,]+', vol_norm)[0], '\n', 'Expiry date'+ re.findall(r'[\d\/\: ]+', days_left)[1], '\n', '\n']))
         f.write('==========================================\n')
@@ -62,11 +63,11 @@ if __name__ == '__main__' :
     try:
         stringList = get_volume()
         imgArray = text2img(stringList)
-        if 'ubuntu-patched-finale.png' in os.listdir('/home/mehregankbi/fishgaman') :
-            os.remove('/home/mehregankbi/fishgaman/ubuntu-patched-finale.png')
+        if conf_dict['edited_wallpaper_path'] in os.listdir(conf_dict['cwd']) :
+            os.remove(conf_dict['edited_wallpaper_path'])
         imageFile = img2bg(imgArray)
         setwp(imageFile)
     except Exception as e :
-        with open('/home/mehregankbi/fishgaman/netlog.log', 'a') as f :
+        with open(conf_dict['logfile_path'], 'a') as f :
             f.write('\nDate: {}\n{}\n'.format(datetime.utcnow().__str__(),e.__str__()))
             f.write('==========================================\n')
