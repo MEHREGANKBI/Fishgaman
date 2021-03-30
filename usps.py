@@ -2,10 +2,10 @@ import os
 conf_dict = {'username' : input('user? '), 
 	'userpass' : input('pass? '),
 	'chromedriver_path' : input('chromedriver path? '),
-	'font_path' : 'DejaVuSans.ttf',
-	'pre_wallpaper_path' : 'ubuntu-rgb-sm.png',
-	'edited_wallpaper_path' : 'ubuntu-patched-finale.png' ,
-	'logfile_path' : 'netlog.log',
+	'font_path' : 'Font(s)/DejaVuSans.ttf',
+	'pre_wallpaper_path' : 'Wallpapers/ubuntu-rgb-sm.png',
+	'edited_wallpaper_path' : 'Wallpapers/ubuntu-patched-finale.png' ,
+	'logfile_path' : 'logs/netlog.log',
 	'cwd': os.getcwd()}
 	
 

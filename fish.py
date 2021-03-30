@@ -73,7 +73,7 @@ if __name__ == '__main__' :
         # make a white patch with a text on it using the text received from the user panel
         imgArray = text2img(stringList)
         # make sure there is not a file with the same name so it doesn't throw an error when we make the new desktop background
-        if conf_dict['edited_wallpaper_path'] in os.listdir(conf_dict['cwd']) :
+        if os.path.exists(conf_dict['edited_wallpaper_path']) :
             os.remove(conf_dict['edited_wallpaper_path'])
         imageFile = img2bg(imgArray)
         #given the image, set is as desktop background
