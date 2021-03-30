@@ -14,6 +14,13 @@ from selenium import webdriver
 from usps import conf_dict
 
 def get_volume():
+    '''
+    Logs in to the pishgaman website and grabs the data and outputs them.
+    
+    Parameters: None
+    
+    Outputs: A list of strings
+    '''
     #some of the options below just exist so as to lower the likelihood of chromedriver throwing a render error. 
     chrome_options = Options()
     chrome_options.add_argument('--disable-gpu')
@@ -61,13 +68,18 @@ def get_volume():
 
 if __name__ == '__main__' :
     try:
+    	#get the data from the user panel
         stringList = get_volume()
+        # make a white patch with a text on it using the text received from the user panel
         imgArray = text2img(stringList)
+        # make sure there is not a file with the same name so it doesn't throw an error when we make the new desktop background
         if conf_dict['edited_wallpaper_path'] in os.listdir(conf_dict['cwd']) :
             os.remove(conf_dict['edited_wallpaper_path'])
         imageFile = img2bg(imgArray)
+        #given the image, set is as desktop background
         setwp(imageFile)
     except Exception as e :
+    	#in case of an error, log the error in the log file.
         with open(conf_dict['logfile_path'], 'a') as f :
             f.write('\nDate: {}\n{}\n'.format(datetime.utcnow().__str__(),e.__str__()))
             f.write('==========================================\n')

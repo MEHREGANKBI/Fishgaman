@@ -1,7 +1,7 @@
 import os
-conf_dict = {'username' : '', 
-	'userpass' : '',
-	'chromedriver_path' : '/home/chromedriver',
+conf_dict = {'username' : input('user? '), 
+	'userpass' : input('pass? '),
+	'chromedriver_path' : input('chromedriver path? '),
 	'font_path' : 'DejaVuSans.ttf',
 	'pre_wallpaper_path' : 'ubuntu-rgb-sm.png',
 	'edited_wallpaper_path' : 'ubuntu-patched-finale.png' ,
