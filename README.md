@@ -15,7 +15,7 @@
 
 ## Introduction
 
-Fishgaman is an web automation based project aimed to solve the problem of having to check non-trivial stuff repeatitively. Using fishgaman, we can automate the boring and error process so that the information you need is always at reach. As of now, it regularly checks my internet credit info and shows them on my desktop. No need to login, wait and then read. It's at the corner of my screen and I check it for a split second whenever I want. 
+Fishgaman is a web automation based project aimed to solve the problem of having to check non-trivial stuff repeatitively. Using fishgaman, we can automate the boring and error process so that the information you need is always at reach. As of now, it regularly checks my internet credit info and shows them on my desktop. No need to login, wait and then read. It's at the corner of my screen and I check it for a split second whenever I want. 
 
 ## Why Fishgaman?
 
@@ -25,7 +25,7 @@ This goes back to the reason I started this project. My ISP, Pishgaman tose-e er
 
 **NOTE: Although the folder of the repo is not exactly the same as the one shown in the video, the idea is the same. The only thing that is different is the path to the files in the configuration dictionary**
 
-Don't forget to configure the **fisher.sh** and the **usps.py** files. More info available in the YouTube video. **Click the GIF below to watch the video.** Direct link to the YouTube video in case the GIF does not work: https://youtu.be/-u7Mzx3W_Bs
+Don't forget to configure the **fisher.sh** and the **usps.py** files. More info available in the YouTube video. **Click the GIF below to watch the video.** Direct link to the YouTube video in case the GIF does not work: **https://youtu.be/-u7Mzx3W_Bs**
 
 [<img src="https://drive.google.com/u/0/uc?id=1ZKKfgNYAPjh6zxPlo4B7Mk-7AGwl3OUi&export=download" width="640" height="360">](http://www.youtube.com/watch?v=-u7Mzx3W_Bs "In Depth video")
 
