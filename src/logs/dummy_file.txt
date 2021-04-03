@@ -1,0 +1,1 @@
+This file exists so git doesn't ignore the empty log folder that will later be populated with the log file.
