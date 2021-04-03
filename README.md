@@ -10,6 +10,8 @@
 
 - [Dependencies](#dependencies)
 
+- [Acknowledgements](#acknowledgements)
+
 
 ## Introduction
 
@@ -25,7 +27,8 @@ This goes back to the reason I started this project. My ISP, Pishgaman tose-e er
 
 Don't forget to configure the **fisher.sh** and the **usps.py** files. More info available in the YouTube video. **Click the GIF below to watch the video.** Direct link to the YouTube video in case the GIF does not work: https://youtu.be/-u7Mzx3W_Bs
 
-[![Image can't load :(](https://i.ytimg.com/vi/-u7Mzx3W_Bs/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBu8Xjxk4qEIyRwcti1q99ECYB8Fw)](http://www.youtube.com/watch?v=-u7Mzx3W_Bs "In Depth video")
+[<img src="https://drive.google.com/u/0/uc?id=1ZKKfgNYAPjh6zxPlo4B7Mk-7AGwl3OUi&export=download" width="640" height="360">](http://www.youtube.com/watch?v=-u7Mzx3W_Bs "In Depth video")
+
 
 
 ## Dependencies
@@ -38,4 +41,14 @@ Selenium 3.141.0
 
 Pillow(aka PIL) 7.0.0
 
-this readme.md file will be updated for info on documentation, instruction and proof of concept. 
+Alternatively, you could use the "requirements.txt" file in the repo for the "pip{3} install -r requirements.txt" command to set up your environment for the scripts to run properly.
+
+
+## Acknowledgements
+
+I'd like to thank Mehdi Javidan for his helpful guidance.
+
+
+
+
+This readme.md file will be updated for info on documentation, instruction and proof of concept. 
