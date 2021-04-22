@@ -81,5 +81,5 @@ if __name__ == '__main__' :
     except Exception as e :
     	#in case of an error, log the error in the log file.
         with open(conf_dict['logfile_path'], 'a') as f :
-            f.write('\nDate: {}\n{}\n'.format(datetime.utcnow().__str__(),e.__str__()))
+            f.write('\nDate: {}\n{}\n'.format(datetime.utcnow().__str__(),str(type(e)) + e.__str__()))
             f.write('==========================================\n')
