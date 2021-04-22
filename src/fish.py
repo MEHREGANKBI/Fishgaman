@@ -45,13 +45,23 @@ def get_volume():
     bttn.click()
     print('==== done logging in ')
     sleep(5)
-    vol_afz =  WebDriverWait(fish, 30).until(EC.presence_of_element_located(
-                        (By.XPATH, '//*[@id="ContentPlaceHolder1_timeBaseCreditBox"]/div[2]/label[2]'))).text.strip()
-    vol_norm = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
-                        (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[1]/div[2]/label[2]'))).text.strip()
-    days_left = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
-                        (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[3]/div[2]/label[3]'))).text.strip()
-
+    
+    try:
+        vol_afz =  WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="ContentPlaceHolder1_timeBaseCreditBox"]/div[2]/label[2]'))).text.strip()
+        vol_norm = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[1]/div[2]/label[2]'))).text.strip()
+        days_left = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[3]/div[2]/label[3]'))).text.strip()
+		        
+    except:
+        vol_afz =  WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[5]/div[2]/label[2]'))).text.strip()
+        vol_norm = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[1]/div[2]/label[2]'))).text.strip()
+        days_left = WebDriverWait(fish, 30).until(EC.presence_of_element_located(
+		                (By.XPATH, '//*[@id="form1"]/div[5]/div[2]/div/div[4]/div/div/div[3]/div/div[3]/div[2]/label[3]'))).text.strip()
+    
     print(re.findall(r'[\d,]+',vol_afz)[0])
     print(re.findall(r'[\d,]+',vol_norm)[0])
     print(re.findall(r'[\d\/\: ]',days_left)[1])
